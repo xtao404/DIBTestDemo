@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfApplication1.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window3" Height="300" Width="300" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid ItemsSource="{Binding}" Name="dataGrid1" MouseUp="dataGrid1_MouseUp" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Expander Expanded="Expander_Expanded" Collapsed="Expander_Collapsed"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Facility_type}" FontSize="22" Header="源语言"   Width="200"/>
+                <DataGridTextColumn Binding="{Binding Floor}" FontSize="22"    Header="目标语言"  Width="200"/>
+                <DataGridTextColumn Binding="{Binding Count_all}" FontSize="22"  FontWeight="Bold"   Foreground="Red" Header="记忆库" Width="100" />
+
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate >
+                <DataTemplate  >
+
+                    <DataGrid Name="dataGrid2" Margin="29,0,0,0" IsReadOnly="True"  HeadersVisibility="None"  HorizontalGridLinesBrush="#FFE0E2DF" VerticalGridLinesBrush="#FFE0E2DF"
+                                 ItemsSource="{Binding Details}" CanUserAddRows="False" SelectionUnit="FullRow" AutoGenerateColumns="False"
+                              MouseUp="dataGrid2_MouseUp">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn  Width="200">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap"  Text="{Binding  building_code}"  Padding="5"></TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn  Width="200">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap"  Text="{Binding  floor}"  Padding="5"></TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn   Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap"  Text="{Binding  dept_name}"  Padding="5"></TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+    </Grid>
+</Window>

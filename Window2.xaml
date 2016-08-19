@@ -25,7 +25,7 @@
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
             <TextBlock Height="20"  Padding="3" >  
-             <TextBlock Text="【共" />  
+             <TextBlock Text="【SUM" />  
              <TextBlock x:Name="tbkTotal" Foreground="Red" />  
              <TextBlock Text="页】" />  
              <TextBlock Text="【当前" />  

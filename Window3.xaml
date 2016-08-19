@@ -12,7 +12,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Binding="{Binding Facility_type}" FontSize="22" Header="源语言"   Width="200"/>
+                <DataGridTextColumn Binding="{Binding Facility_type}" FontSize="22" Header="源语言Mark"   Width="200"/>
                 <DataGridTextColumn Binding="{Binding Floor}" FontSize="22"    Header="目标语言"  Width="200"/>
                 <DataGridTextColumn Binding="{Binding Count_all}" FontSize="22"  FontWeight="Bold"   Foreground="Red" Header="记忆库" Width="100" />
 
